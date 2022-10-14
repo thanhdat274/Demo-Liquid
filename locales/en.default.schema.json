@@ -119,11 +119,11 @@
           "info": "Used as foreground color on accent colors."
         },
         "colors_1": {
-          "label": "Accent 1",
+          "label": "Color 1",
           "info": "Used for solid button background."
         },
         "colors_2": {
-          "label": "Accent 2"
+          "label": "Color 2"
         },
         "header__1": {
           "content": "Primary colors"
