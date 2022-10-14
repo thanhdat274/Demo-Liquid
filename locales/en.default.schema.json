@@ -354,11 +354,11 @@
       },
       "spacing": "Spacing",
       "colors": {
-        "accent_1": {
-          "label": "Accent 1"
+        "colors_1": {
+          "label": "Color 1"
         },
-        "accent_2": {
-          "label": "Accent 2"
+        "colors_2": {
+          "label": "Color 2"
         },
         "background_1": {
           "label": "Background 1"
