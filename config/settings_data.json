@@ -1,6 +1,33 @@
 {
   "current": {
-    "colors_1": "#171719"
+    "colors_1": "#171719",
+    "colors_2": "#1878b9",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "color_scheme": "color-2",
+          "logo_width": 100,
+          "logo_position": "middle-left",
+          "menu": "main-menu",
+          "menu_type_desktop": "dropdown",
+          "show_line_separator": true,
+          "enable_sticky_header": true,
+          "mobile_logo_position": "center",
+          "margin_bottom": 0,
+          "padding_top": 20,
+          "padding_bottom": 20
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
