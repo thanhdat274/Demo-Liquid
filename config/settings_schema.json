@@ -23,10 +23,10 @@
       },
       {
         "type": "color",
-        "id": "colors_1",
+        "id": "colors_accent_1",
         "default": "#171719",
-        "label": "t:settings_schema.colors.settings.colors_1.label",
-        "info": "t:settings_schema.colors.settings.colors_1.info"
+        "label": "t:settings_schema.colors.settings.colors_accent_1.label",
+        "info": "t:settings_schema.colors.settings.colors_accent_1.info"
       },
       {
         "id": "gradient_accent_1",
@@ -35,9 +35,9 @@
       },
       {
         "type": "color",
-        "id": "colors_2",
+        "id": "colors_accent_2",
         "default": "#d9d9d9",
-        "label": "t:settings_schema.colors.settings.colors_2.label"
+        "label": "t:settings_schema.colors.settings.colors_accent_2.label"
       },
       {
         "id": "gradient_accent_2",

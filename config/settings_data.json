@@ -31,9 +31,9 @@
   "presets": {
     "Default": {
       "colors_solid_button_labels": "#ffffff",
-      "colors_1": "#171719",
+      "colors_accent_1": "#171719",
       "gradient_accent_1": "",
-      "colors_2": "#d9d9d9",
+      "colors_accent_2": "#d9d9d9",
       "gradient_accent_2": "",
       "colors_text": "#171719",
       "colors_outline_button_labels": "#171719",
