@@ -1,32 +1,49 @@
 {
   "sections": {
-    "rich_text": {
+    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
+        "template--14420425998465__4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac-1665979979e7349ecd-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
-        "text": {
+        "template--14420425998465__4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac-1665979979e7349ecd-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--14420425998465__4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac-1665979979e7349ecd-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "template--14420425998465__4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac-1665979979e7349ecd-0",
+        "template--14420425998465__4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac-1665979979e7349ecd-1",
+        "template--14420425998465__4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac-1665979979e7349ecd-2"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 52
       }
     }
   },
-  "order": []
+  "order": [
+    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac"
+  ]
 }
