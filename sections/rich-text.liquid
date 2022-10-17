@@ -105,30 +105,16 @@
             "id": "heading",
             "default": "<p>Hoc liquid lu qua</p>",
             "label": "Heading"
-          },  {
-          "type": "select",
-          "id": "font_size",
-          "options": [
-            {
-              "value": "h2",
-              "label": "lon"
-            },
-            {
-              "value": "h1",
-              "label": "rat lon"
-            },
-            {
-              "value": "h0",
-              "label": "nho"
-            },
-            {
-              "value": "hxl",
-              "label": "trung binh"
-            }
-          ],
-          "default": "h1",
-          "label": "rat lon"
-        }
+          }, {
+            "type": "range",
+            "id": "font_size",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Font Size",
+            "default": 24
+          }
         ]
       }
     ],
