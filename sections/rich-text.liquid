@@ -1,3 +1,16 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
 <div class="isolate">
   <div class="rick-text__wrapper {{section.settings.box_section}}">
     <div class="rick-text__block {{section.settings.box_section_content}}">
@@ -92,16 +105,30 @@
             "id": "heading",
             "default": "<p>Hoc liquid lu qua</p>",
             "label": "Heading"
-          }, {
-            "type": "range",
-            "id": "font_size",
-            "min": 10,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "Font Size",
-            "default": 24
-          }
+          },  {
+          "type": "select",
+          "id": "font_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "lon"
+            },
+            {
+              "value": "h1",
+              "label": "rat lon"
+            },
+            {
+              "value": "h0",
+              "label": "nho"
+            },
+            {
+              "value": "hxl",
+              "label": "trung binh"
+            }
+          ],
+          "default": "h1",
+          "label": "rat lon"
+        }
         ]
       }
     ],
