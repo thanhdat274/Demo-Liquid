@@ -40,6 +40,13 @@
       },
       {
         "type": "color",
+        "id": "colors_text",
+        "default": "#171719",
+        "label": "t:settings_schema.colors.settings.colors_text.label",
+        "info": "t:settings_schema.colors.settings.colors_text.info"
+      },
+      {
+        "type": "color",
         "id": "colors_background_1",
         "default": "#FFFFFF",
         "label": "t:settings_schema.colors.settings.colors_background_1.label"
