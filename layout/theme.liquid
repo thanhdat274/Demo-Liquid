@@ -299,7 +299,7 @@
       {{ content_for_layout }}
     </main>
 
-    {% section 'footer' %}
+    {%- comment -%} {% section 'footer' %} {%- endcomment -%}
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
