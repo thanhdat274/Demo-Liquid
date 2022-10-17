@@ -81,31 +81,38 @@
         "default": 40
       }
     ],
-    "block": [
+    "blocks": [
       {
         "type": "heading",
         "name": "Heading",
         "limit": 3,
         "settings": [
           {
-            "type":"ricktext",
-            "id":"heading",
-            "default":"<p>Hoc liquid lu qua</p>",
+            "type": "richtext",
+            "id": "heading",
+            "default": "<p>Hoc liquid lu qua</p>",
             "label": "Heading"
-          },
-          {
-            "type":"range",
-            "id":"font_size",
+          }, {
+            "type": "range",
+            "id": "font_size",
             "min": 10,
             "max": 100,
             "step": 1,
-            "unti": "px",
+            "unit": "px",
             "label": "Font Size",
             "default": 24
           }
-        ],
-        "default": "<p>Hoc liquid lu qua</p>",
-        "label": "Heading"
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": ".",
+        "blocks": [
+          {
+            "type": "heading"
+          }
+        ]
       }
     ]
   }
