@@ -4,11 +4,31 @@
 
 {% schema %}
 {
-  "name": "Rick-texxt",
+  "name": "rick text",
   "tag": "section",
   "class": "section",
   "settings": [
-    
+    {
+      "type": "select",
+      "id": "section",
+      "options":[
+        {
+          "value": "left",
+          "label":"Left"
+        },
+        {
+          "value": "center",
+          "label":"Center"
+        },
+        {
+          "value": "right",
+          "label":"Right"
+        }
+      ],
+       "default": "center",
+      "label":"hihi",
+      "info": "rick text"
+    }
   ]
 }
 {% endschema %}
