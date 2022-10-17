@@ -1,21 +1,5 @@
 {
   "sections": {
-    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac": {
-      "type": "rich-text",
-      "block":{
-        
-      },
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    }
-  },
-  "order": [
-    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac"
-  ]
+    
+  }
 }

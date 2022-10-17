@@ -1,7 +1,7 @@
 <div class="isolate">
   <div class="rick-text__wrapper {{section.settings.box_section}}">
     <div class="rick-text__block {{section.settings.box_section_content}}">
-      {%- for block in section.block -%}
+      {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
             <h2 class="rich-text__heading rte {{ block.settings.font_size }}" {{ block.shopify_attributes }}>
