@@ -1,5 +1,42 @@
 {
   "sections": {
-    
-  }
+    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac": {
+      "type": "rich-text",
+      "blocks": {
+        "bd07930e-2aae-457a-80d3-1b907b1d4820": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Hoc liquid lu qua<\/p>",
+            "font_size": 54
+          }
+        },
+        "d3028d4e-f853-48aa-adc4-0490754a8a56": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button"
+          }
+        },
+        "72133735-31b3-44c2-a07b-9ab536a57a3a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bd07930e-2aae-457a-80d3-1b907b1d4820",
+        "d3028d4e-f853-48aa-adc4-0490754a8a56",
+        "72133735-31b3-44c2-a07b-9ab536a57a3a"
+      ],
+      "settings": {
+        "box_section": "right",
+        "box_section_content": "center",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac"
+  ]
 }
