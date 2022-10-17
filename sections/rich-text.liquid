@@ -2,7 +2,12 @@
   <div class="rick-text__wrapper {{section.settings.box_section}}">
     <div class="rick-text__block {{section.settings.box_section_content}}">
       {%- for block in section.block -%}
-        
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 class="rich-text__heading rte {{ block.settings.font_size }}" {{ block.shopify_attributes }}>
+              {{ block.settings.heading | replace: 'p>', 'span>' }}
+            </h2>
+        {%- endcase -%}
       {%- endfor -%}
     </div>
   </div>
@@ -32,7 +37,8 @@
         "default": "center",
         "label": "Box section",
         "info": "Khối tổng bên ngoài"
-      }, {
+      },
+      {
         "type": "select",
         "id": "box_section_content",
         "options": [
@@ -52,29 +58,55 @@
         "info": "Khối content"
       },
       {
-      "type": "header",
-      "content": "Padding header"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "padding top",
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "padding bottom",
-      "default": 40
-    }
+        "type": "header",
+        "content": "Padding header"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "padding top",
+        "default": 40
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "padding bottom",
+        "default": 40
+      }
+    ],
+    "block": [
+      {
+        "type": "heading",
+        "name": "Heading",
+        "limit": 3,
+        "settings": [
+          {
+            "type":"ricktext",
+            "id":"heading",
+            "default":"<p>Hoc liquid lu qua</p>",
+            "label": "Heading"
+          },
+          {
+            "type":"range",
+            "id":"font_size",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "unti": "px",
+            "label": "Font Size",
+            "default": 24
+          }
+        ],
+        "default": "<p>Hoc liquid lu qua</p>",
+        "label": "Heading"
+      }
     ]
   }
 {% endschema %}
