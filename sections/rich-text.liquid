@@ -1,4 +1,12 @@
-<div class=""></div>
+<div class="isolate">
+  <div class="rick-text__wrapper {{section.settings.box_section}}">
+    <div class="rick-text__block {{section.settings.box_section_content}}">
+      {%- for block in section.block -%}
+        
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
 
 {% schema %}
   {
@@ -41,8 +49,32 @@
         ],
         "default": "left",
         "label": "Box section content",
-        "info":"Khối content"
-      }
+        "info": "Khối content"
+      },
+      {
+      "type": "header",
+      "content": "Padding header"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "padding bottom",
+      "default": 40
+    }
     ]
   }
 {% endschema %}
