@@ -24,15 +24,15 @@
             <div class="rich-text__text rte" {{ block.shopify_attributes }}>
               {{ block.settings.text }}
             </div>
-            
+
           {%- when 'button' -%}
             <div class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
               {%- if block.settings.button_label != blank -%}
-                <a {% if block.settings.button_link == blank %}role="link" aria-disabled="true" {% else %} href="{{ block.settings.button_link }}" {% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label | escape }}
+                <a {% if block.settings.button_link == blank %}role="link"aria-disabled="true"{% else %} href="{{ block.settings.button_link }}" {% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label | escape }}
                 </a>
               {%- endif -%}
               {%- if block.settings.button_label_2 != blank -%}
-                <a {% if block.settings.button_link_2 == blank %}role="link" aria-disabled="true" {% else %} href="{{ block.settings.button_link_2 }}" {% endif %} class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_2 | escape }}
+                <a {% if block.settings.button_link_2 == blank %}role="link"aria-disabled="true"{% else %} href="{{ block.settings.button_link_2 }}" {% endif %} class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_2 | escape }}
                 </a>
               {%- endif -%}
             </div>
@@ -153,8 +153,34 @@
             "type": "text",
             "id": "button_label",
             "default": "Button",
-            "label": "button",
-            "info": "button"
+            "label": "button text 1",
+            "info": "button text 1"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "button link"
+          },
+          {
+            "type": "checkbox",
+            "id": "button_style_secondary",
+            "default": false,
+            "label": "button checkbox"
+          },
+          {
+            "type": "text",
+            "id": "button_label_2",
+            "label": "button text 2",
+            "info": "button text 2"
+          }, {
+            "type": "url",
+            "id": "button_link_2",
+            "label": "button link 2"
+          }, {
+            "type": "checkbox",
+            "id": "button_style_secondary_2",
+            "default": false,
+            "label": "checkbox 2"
           }
         ]
       }
