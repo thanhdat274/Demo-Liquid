@@ -11,7 +11,8 @@
     }
   }
 {%- endstyle -%}
-<div class="isolate">
+<div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
   <div class="rick-text__wrapper  rich-text__wrapper--{{section.settings.box_section}}">
     <div class="rick-text__block {{section.settings.box_section_content}}">
       {%- for block in section.blocks -%}
@@ -39,6 +40,7 @@
         {%- endcase -%}
       {%- endfor -%}
     </div>
+  </div>
   </div>
 </div>
 
