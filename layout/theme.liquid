@@ -45,13 +45,13 @@
   </head>
 
   <body class="gradient">
-    {%- comment -%} {% section 'header' %} {%- endcomment -%}
+    {% section 'header' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main">
       {{ content_for_layout }}
     </main>
 
-    {%- comment -%} {% section 'footer' %} {%- endcomment -%}
+    {% section 'footer' %}
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
