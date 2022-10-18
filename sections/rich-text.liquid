@@ -13,7 +13,7 @@
 {%- endstyle -%}
 <div class="isolate">
   <div class="rich-text content-container section-{{ section.id }}-padding">
-  <div class="rick-text__wrapper  rich-text__wrapper--{{section.settings.box_section}}">
+  <div class="rick-text__wrapper  rich-text__wrapper--{{section.settings.desktop_content_position}}">
     <div class="rick-text__block {{section.settings.box_section_content}}">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -52,7 +52,7 @@
     "settings": [
       {
         "type": "select",
-        "id": "box_section",
+        "id": "desktop_content_position",
         "options": [
           {
             "value": "left",
