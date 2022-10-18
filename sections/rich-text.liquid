@@ -3,7 +3,9 @@
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
-
+  .rich-text__heading {
+    font-size: {{ section.settings.heading_size }}px;
+  }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -13,34 +15,34 @@
 {%- endstyle -%}
 <div class="isolate">
   <div class="rich-text content-container section-{{ section.id }}-padding">
-  <div class="rick-text__wrapper  rich-text__wrapper--{{section.settings.desktop_content_position}}">
-    <div class="rick-text__blocks {{section.settings.content_alignment}}">
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when 'heading' -%}
-            <p class="rich-text__heading rte {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-              {{ block.settings.heading | replace: 'p>', 'span>' }}
-            </p>
-          {%- when 'text' -%}
-            <div class="rich-text__text rte" {{ block.shopify_attributes }}>
-              {{ block.settings.text }}
-            </div>
+    <div class="rick-text__wrapper  rich-text__wrapper--{{section.settings.desktop_content_position}}">
+      <div class="rick-text__blocks {{section.settings.content_alignment}}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <p class="rich-text__heading rte {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                {{ block.settings.heading | replace: 'p>', 'span>' }}
+              </p>
+            {%- when 'text' -%}
+              <div class="rich-text__text rte" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
 
-          {%- when 'button' -%}
-            <div class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
-              {%- if block.settings.button_label != blank -%}
-                <a {% if block.settings.button_link == blank %}role="link"aria-disabled="true"{% else %} href="{{ block.settings.button_link }}" {% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label | escape }}
-                </a>
-              {%- endif -%}
-              {%- if block.settings.button_label_2 != blank -%}
-                <a {% if block.settings.button_link_2 == blank %}role="link"aria-disabled="true"{% else %} href="{{ block.settings.button_link_2 }}" {% endif %} class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_2 | escape }}
-                </a>
-              {%- endif -%}
-            </div>
-        {%- endcase -%}
-      {%- endfor -%}
+            {%- when 'button' -%}
+              <div class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
+                {%- if block.settings.button_label != blank -%}
+                  <a {% if block.settings.button_link == blank %}role="link"aria-disabled="true"{% else %} href="{{ block.settings.button_link }}" {% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label | escape }}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.button_label_2 != blank -%}
+                  <a {% if block.settings.button_link_2 == blank %}role="link"aria-disabled="true"{% else %} href="{{ block.settings.button_link_2 }}" {% endif %} class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_2 | escape }}
+                  </a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
     </div>
-  </div>
   </div>
 </div>
 
