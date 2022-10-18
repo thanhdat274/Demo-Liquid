@@ -66,12 +66,20 @@
             "button_link_2": "shopify:\/\/collections\/all",
             "button_style_secondary_2": false
           }
+        },
+        "e1b75fd1-42f3-49eb-a2ae-427c22b0bde5": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Hoc liquid lu qua <\/p>",
+            "heading_size": 24
+          }
         }
       },
       "block_order": [
         "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-0",
         "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-1",
-        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-2"
+        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-2",
+        "e1b75fd1-42f3-49eb-a2ae-427c22b0bde5"
       ],
       "settings": {
         "desktop_content_position": "center",
