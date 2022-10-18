@@ -88,23 +88,23 @@
         "padding_bottom": 40
       }
     },
-    "23b4d3bb-4276-46f0-9812-4c899b83386f": {
+    "8cbc0ec1-9ac4-4f09-8721-65ccb6be0798": {
       "type": "rich-text",
       "blocks": {
-        "template--14420425998465__23b4d3bb-4276-46f0-9812-4c899b83386f-166607804246dfabd6-0": {
+        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-0": {
           "type": "heading",
           "settings": {
             "heading": "<p>Hoc liquid lu qua <\/p>",
             "heading_size": 24
           }
         },
-        "template--14420425998465__23b4d3bb-4276-46f0-9812-4c899b83386f-166607804246dfabd6-1": {
+        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-1": {
           "type": "text",
           "settings": {
             "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
-        "template--14420425998465__23b4d3bb-4276-46f0-9812-4c899b83386f-166607804246dfabd6-2": {
+        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-2": {
           "type": "button",
           "settings": {
             "button_label": "Button",
@@ -117,9 +117,9 @@
         }
       },
       "block_order": [
-        "template--14420425998465__23b4d3bb-4276-46f0-9812-4c899b83386f-166607804246dfabd6-0",
-        "template--14420425998465__23b4d3bb-4276-46f0-9812-4c899b83386f-166607804246dfabd6-1",
-        "template--14420425998465__23b4d3bb-4276-46f0-9812-4c899b83386f-166607804246dfabd6-2"
+        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-0",
+        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-1",
+        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-2"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -128,23 +128,23 @@
         "padding_bottom": 40
       }
     },
-    "9e508b3c-872a-4986-967d-6e5681ea1e1d": {
+    "4086dd87-0c80-4352-b773-0aa9076b2a8f": {
       "type": "rich-text",
       "blocks": {
-        "template--14420425998465__9e508b3c-872a-4986-967d-6e5681ea1e1d-166607804246dfabd6-0": {
+        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-0": {
           "type": "heading",
           "settings": {
             "heading": "<p>Hoc liquid lu qua <\/p>",
             "heading_size": 24
           }
         },
-        "template--14420425998465__9e508b3c-872a-4986-967d-6e5681ea1e1d-166607804246dfabd6-1": {
+        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-1": {
           "type": "text",
           "settings": {
             "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
-        "template--14420425998465__9e508b3c-872a-4986-967d-6e5681ea1e1d-166607804246dfabd6-2": {
+        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-2": {
           "type": "button",
           "settings": {
             "button_label": "Button",
@@ -157,9 +157,9 @@
         }
       },
       "block_order": [
-        "template--14420425998465__9e508b3c-872a-4986-967d-6e5681ea1e1d-166607804246dfabd6-0",
-        "template--14420425998465__9e508b3c-872a-4986-967d-6e5681ea1e1d-166607804246dfabd6-1",
-        "template--14420425998465__9e508b3c-872a-4986-967d-6e5681ea1e1d-166607804246dfabd6-2"
+        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-0",
+        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-1",
+        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-2"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -172,7 +172,7 @@
   "order": [
     "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac",
     "d0662d1d-f537-4de7-b85f-1213482eae46",
-    "23b4d3bb-4276-46f0-9812-4c899b83386f",
-    "9e508b3c-872a-4986-967d-6e5681ea1e1d"
+    "8cbc0ec1-9ac4-4f09-8721-65ccb6be0798",
+    "4086dd87-0c80-4352-b773-0aa9076b2a8f"
   ]
 }
