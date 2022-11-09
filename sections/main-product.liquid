@@ -1,0 +1,217 @@
+{{ 'detail-products.css' | asset_url | stylesheet_tag }}
+
+<section class="box-section1">
+  <div class="page-width">
+    <div class="box-product-detail">
+
+      <div class="box-product-detail__heading">
+        <p class="heading__item">
+          <a href="index5.html" class="heading__item block-sub-title text-CC4">HOME</a>
+        </p>
+        <svg width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="2.5" cy="3" r="2.5" fill="#9EA0A8"/>
+        </svg>
+        <p class="heading__item">
+          <a href="#" class="heading__item block-sub-title text-CC4">RING</a>
+        </p>
+        <svg width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="2.5" cy="3" r="2.5" fill="#9EA0A8"/>
+        </svg>
+        <p class="block-title1">
+          PRODUCT NAME
+        </p>
+      </div>
+
+      <div class="product-detail__content">
+        <div class="product-detail__left">
+          <div class="mySlides">
+            <img src="./image/Rectangle 156.png">
+          </div>
+
+          <div class="mySlides">
+            <img src="./image/Rectangle 162.png">
+          </div>
+
+          <div class="mySlides">
+            <img src="./image/Rectangle 163.png">
+          </div>
+
+          <div class="mySlides">
+            <img src="./image/section1-image1.png">
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">
+            <i class="fa-regular fa-chevron-left"></i>
+          </a>
+          <a class="next" onclick="plusSlides(1)">
+            <i class="fa-light fa-chevron-right"></i>
+          </a>
+
+          <div class="caption-container"></div>
+
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="./image/Rectangle 156.png" onclick="currentSlide(1)" alt="The Woods">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./image/Rectangle 162.png" onclick="currentSlide(2)" alt="Cinque Terre">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./image/Rectangle 163.png" onclick="currentSlide(3)" alt="Mountains and fjords">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./image/section1-image1.png" onclick="currentSlide(4)" alt="Northern Lights">
+            </div>
+          </div>
+        </div>
+
+        <div class="product-detail__right">
+          <h2 class="product-detail__name heading">PRODUCT NAME</h2>
+          <p class="product-detail__price heading">$99.99</p>
+          <div class="detail-info__size">
+            <span class="block-title let-sp-2px">SIZE</span>
+            <div class="detail-info__size-icon">
+              <img src="./image/detail-icon.svg" alt="">
+              <span class="block-sub-title text-48E">Find your size</span>
+            </div>
+          </div>
+
+          <form action="">
+            <div class="detail-info__select-size">
+              <select name="" id="" class="form-select block-title1">
+                <option value="50">50</option>
+                <option value="50">50</option>
+                <option value="50">50</option>
+              </select>
+            </div>
+            <div class="detail-info__addToCart">
+              <div class="detail-info__addToCart-amount">
+                <i class="fa-solid fa-minus"></i>
+                <span class="block-title1">1</span>
+                <i class="fa-solid fa-plus"></i>
+              </div>
+              <button class="addToCart__btn block-sub-title let-sp-2px">ADD TO CART</button>
+              <div class="addToCart__icon-like">
+                <i class="fa-regular fa-heart icon-like active"></i>
+                <i class="fa-sharp fa-solid fa-heart icon-like-fill"></i>
+              </div>
+            </div>
+            <button class="btn-buy-now block-sub-title let-sp-2px">BUY NOW</button>
+          </form>
+
+          <div class="detail-info__promotion block-sub-title let-sp-2px">
+            GET THIS PRODUCT BY 1ST APR !
+          </div>
+
+          <p class="detail-info__desc block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus error
+            sit voluptatem accusantium
+                        doloremque laudanm, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                        beatae vitae dicta sunt explicabo</p>
+
+          <h3 class="detail-info__gift block-title let-sp-2px">OUR GIFT BOX EXCLUSIVELY FOR YOU</h3>
+          <img src="./image/product-detail.png" alt="" class="product-detail__image">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="box-section2">
+  <div class="page-width">
+    <div class="box2">
+      <div class="product-detail__menu">
+        <ul class="detail-menu__list">
+          <li class="detail-menu__item active">
+            <a href="#abc" class="block-title let-sp-2px detail-menu__link detail-menu__link--active">
+              <span class="block">PRODUCT INFORMATION</span>
+              <span class="none">PRODUCT INFO</span>
+            </a>
+          </li>
+          <li class="detail-menu__item">
+            <a href="#abc" class="block-title let-sp-2px detail-menu__link">OUR SERVICE</a>
+          </li>
+          <li class="detail-menu__item">
+            <a href="#abc" class="block-title let-sp-2px detail-menu__link">PAYMENT METHOD</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="detail-desc active">
+        <div class="detail-desc-box">
+          <div class="detail-desc__left">
+            <h3 class="heading1 let-sp-2px">PRODUCT INFO</h3>
+            <ul class="detail-desc__menu">
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+            </ul>
+          </div>
+          <div class="detail-desc__right">
+            <img src="./image/Rectangle 167.png" alt="" class="detail-desc__item-img">
+          </div>
+        </div>
+      </div>
+      <div class="detail-desc">
+        <div class="detail-desc-box">
+          <div class="detail-desc__left">
+            <h3 class="heading1 let-sp-2px">OUR SERVICE</h3>
+            <ul class="detail-desc__menu">
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+            </ul>
+          </div>
+          <div class="detail-desc__right">
+            <img src="./image/Rectangle 167.png" alt="" class="detail-desc__item-img">
+          </div>
+        </div>
+      </div>
+      <div class="detail-desc">
+        <div class="detail-desc-box">
+          <div class="detail-desc__left">
+            <h3 class="heading1 let-sp-2px">PAYMENT METHOD</h3>
+            <ul class="detail-desc__menu">
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+              <li class="detail-desc__item block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus
+                error sit</li>
+            </ul>
+          </div>
+          <div class="detail-desc__right">
+            <img src="./image/Rectangle 167.png" alt="" class="detail-desc__item-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "product detail",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": ""
+      }
+    ],
+    "blocks": []
+  }
+{% endschema %}
