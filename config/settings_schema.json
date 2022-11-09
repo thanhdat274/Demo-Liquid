@@ -6,5 +6,205 @@
     "theme_author": "Shopify",
     "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
     "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "color",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Primary colors"
+      },
+      {
+        "type": "color",
+        "id": "colors_color_1",
+        "default": "#171719",
+        "label": "color 1"
+      },
+      {
+        "id": "gradient_color_1",
+        "type": "color_background",
+        "label": "gradient 1"
+      },
+      {
+        "type": "color",
+        "id": "colors_color_2",
+        "default": "#ffffff",
+        "label": "color 2"
+      },
+      {
+        "id": "gradient_color_2",
+        "type": "color_background",
+        "label": "gradient 2"
+      },
+      {
+        "type": "color",
+        "id": "colors_color_3",
+        "default": "#84848E",
+        "label": "color 3"
+      },
+      {
+        "id": "gradient_color_3",
+        "type": "color_background",
+        "label": "gradient 3"
+      },
+      {
+        "type": "header",
+        "content": "Secondary colors"
+      },
+      {
+        "type": "color",
+        "id": "colors_text",
+        "default": "#171719",
+        "label": "text"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_1",
+        "default": "#171719",
+        "label": "colors_background_1"
+      },
+      {
+        "id": "gradient_background_1",
+        "type": "color_background",
+        "label": "gradient_background_1"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_2",
+        "default": "#ffffff",
+        "label": "colors_background_2"
+      },
+      {
+        "id": "gradient_background_2",
+        "type": "color_background",
+        "label": "gradient_background_2"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_3",
+        "default": "#F5F5F5",
+        "label": "colors_background_3"
+      },
+      {
+        "id": "gradient_background_3",
+        "type": "color_background",
+        "label": "gradient_background_3"
+      }
+    ]
+  },
+  {
+    "name": "typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "header"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "default": "lato_n4",
+        "label": "type_header_font",
+        "info": "type_header_font"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Font size scale",
+        "default": 100
+      },
+      {
+        "type": "header",
+        "content": "body"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "lato_n6",
+        "label": "type body font"
+      },
+      {
+        "type": "range",
+        "id": "body_scale",
+        "min": 100,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "Font size scale",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "layout",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 10,
+        "default": 1100,
+        "unit": "px",
+        "label": "page width"
+      }
+    ]
+  },
+  {
+    "name": "social-media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "social-media"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "social twitter link"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "social_facebook link"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "social pinterest link"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "social instagram link"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "social tiktok link"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "social_tumblr link"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "social snapchat link"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "social youtube link"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "social linkedin link"
+      }
+    ]
   }
 ]
