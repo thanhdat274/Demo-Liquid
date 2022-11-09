@@ -1,0 +1,86 @@
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+
+<div class="box-section">
+  <div class="slideshow-container">
+    {%- for block in section.blocks -%}
+      <div class="mySlides fade">
+        {%- if block.settings.image -%}
+          {%- assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round -%}
+          {{ block.settings.image | image_url: width: 3840 | image_tag:
+           class:"banner"
+           , loading: 'lazy'
+           , height: height
+           , sizes: "100vw"
+           , widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+           }}
+        {%- else -%}
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        {%- if block.settings.heading != blank -%}
+          <h2 class="text heading">{{ block.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if block.settings.button_label != blank -%}
+          <a {% if block.settings.link == blank %}role="link" aria-disabled="true" {% else %} href="{{ block.settings.link }}" {% endif %} class="button">
+            {{ block.settings.button_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+    <a class="prev" onclick="plusSlides(-1)">
+      {% render 'icon-prev' %}
+    </a>
+    <a class="next" onclick="plusSlides(1)">
+      {% render 'icon-next' %}
+    </a>
+  </div>
+</div>
+
+
+<script src="{{ 'slideshow.js' | asset_url }}" defer="defer"></script>
+
+{%schema%}
+  {
+    "name": "slideshow",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "slide"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "DECORAZIONI PER LE FESTE",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "default": "SHOP NOW",
+            "label": "Button"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "slideshow",
+        "blocks": [
+          {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+  }
+{%endschema%}
