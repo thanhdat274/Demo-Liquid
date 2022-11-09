@@ -1,5 +1,153 @@
+{%- style -%}
+  .header {
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .section-header {
+    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-header {
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .header {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+  <symbol id="icon-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/>
+  </symbol>
+
+
+  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+  </symbol>
+</svg>
+
+
 <header class="header">
-  <div class="">
-    
+  <div class="header-wrapper">
+    <h1 class="header__heading">
+      <a href="{{ routes.root_url }}">
+        {%- if section.settings.logo != blank -%}
+          {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
+          {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
+          {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
+           height: logo_height
+           , width: section.settings.logo_width
+           , alt: logo_alt
+           }}
+        {%- else -%}
+          <span>{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    </h1>
+    <div class="box-menu">
+      <ul class="menu-list">
+        {%- for link in section.settings.menu.links -%}
+          <li class="item-menu">
+            {%- if link.links != blank -%}
+              <a href="{{ link.url }}">
+                {{ link.title | escape }}
+                {% render 'icon-caret' %}
+              </a>
+              <ul class="menu-sub-list">
+                {%- for childlink in link.links -%}
+                  <li class="item-menu-sub">
+                    <a href="{{ childlink.url }}">
+                      {{ childlink.title | escape }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- else -%}
+              <a href="{{ link.url }}">{{ link.title | escape }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+      <div class="search">
+        <form action="{{ routes.search_url }}" method="get" role="search">
+          <div class="box-search">
+            {% render 'icon-search' %}
+            <input class="input-search" type="search" value="" autocomplete="off" placeholder="Enter keywords and hit Enter to search..." {%- if settings.predictive_search_enabled -%}role="combobox"aria-expanded="false"aria-owns="predictive-search-results-list"aria-controls="predictive-search-results-list"aria-haspopup="listbox"aria-autocomplete="list"autocorrect="off"autocomplete="off"autocapitalize="off"spellcheck="false"{%- endif -%}>{% render 'icon-close' %}
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="box-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="item-icon btn-search"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="item-icon">
+        {% render 'icon-account' %}
+      </a>
+      <a href="{{ routes.cart_url }}" class="item-icon">
+        {%  render 'icon-cart' %}
+      </a>
+    </div>
   </div>
 </header>
+
+{% schema %}
+  {
+    "name": "Header",
+    "class": "section-header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo header"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 80,
+        "max": 200,
+        "step": 2,
+        "default": 134,
+        "unit": "px",
+        "label": "Logo width"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Menu"
+      },
+      {
+        "type": "header",
+        "content": "padding header"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 36,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 20
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 36,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 20
+      }
+    ]
+  }
+{% endschema %}
