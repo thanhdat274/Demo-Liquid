@@ -1,0 +1,12 @@
+{%- if card_collection.featured_image -%}
+  <img src=" {{ card_collection.featured_image | image_url: width: 150 }}" loading=" lazy" class=" section1-item">
+{%- endif -%}
+<div class="block-sub-title title">
+  <a {% if card_collection == blank %}role="link"aria-disabled="true"{% else %} href="{{ card_collection.url }}" {% endif %} class="block-sub-title color-{{ section.settings.color_scheme }}">
+    {%- if card_collection.title != blank -%}
+      {{- card_collection.title | escape -}}
+    {%- else -%}
+      {{ 'onboarding.collection_title' | t }}
+    {%- endif -%}
+  </a>
+</div>
