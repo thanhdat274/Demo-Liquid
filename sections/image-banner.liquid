@@ -1,0 +1,69 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+<section class="box-section box4">
+  <div class="image-banner ">
+    {%- if section.settings.image_banner != blank-%}
+      {{ section.settings.image_banner | image_url: width: 1500 | image_tag:
+       class:"image_banner"
+       , loading: 'lazy'
+       , sizes: "100vw"
+       , widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+       }}
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+  <div class="page-width padding">
+    <div class="section4-content">
+      <h2>{{ section.settings.heading_banner }}</h2>
+      <p class="block-sub-title title1">{{ section.settings.sub_title_banner }}</p>
+
+      {%- if section.settings.button_label != blank -%}
+        <a {% if section.settings.button_link == blank %}role="link" aria-disabled="true" {% else %} href="{{ section.settings.button_link }}" {% endif %} class="block-sub-title title3">
+          {{ section.settings.button_label | escape }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "image banner",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_banner",
+        "label": "image"
+      },
+      {
+        "type": "text",
+        "id": "heading_banner",
+        "default": "NEW COLLECTION 2021",
+        "label": "heading banner"
+      },
+      {
+        "type": "text",
+        "id": "sub_title_banner",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu",
+        "label": "Sub title banner"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "default": "SEE MORE  >",
+        "label": "Button"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "image banner"
+      }
+    ]
+  }
+{% endschema %}
