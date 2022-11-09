@@ -1,0 +1,229 @@
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .heading {
+    font-size: {{ section.settings.font_size }}px
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+{%- endstyle -%}
+
+
+<section class="box-section color-{{ section.settings.background_scheme }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="box5">
+      <div class="box-heading">
+        <h2 class="heading color-{{ section.settings.color_scheme }}">{{ section.settings.heading }}</h2>
+      </div>
+      <div class="section1-content">
+        {%- for block in section.blocks -%}
+          {%- assign empty_column = '' -%}
+          {%- if block.settings.image == blank and block.settings.title == blank and block.settings.text == blank and block.settings.link_label == blank -%}
+            {%- assign empty_column = ' multicolumn-list__item--empty' -%}
+          {%- endif -%}
+          <div class="section5-item color-{{ block.settings.color_item }} color-{{ block.settings.background_item }}">
+            <div class="box-item">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1420 | image_tag:
+                 loading: 'lazy'
+                 , sizes: sizes
+                 , widths: '275, 550, 710, 1420'
+                 , class: 'multicolumn-card__image'
+                 }}
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <h2 class="block-title">{{ block.settings.title }}</h2>
+              {%- endif -%}
+              {%- if block.settings.sub_title != blank -%}
+                <p class="block-sub-title title5">{{ block.settings.sub_title }}</p>
+              {%- endif -%}
+              {%- if block.settings.link_label != blank -%}
+                <a class="link animate-arrow" {% if block.settings.link == blank %}role="link"aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>
+                  {{ block.settings.link_label | escape }}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "multicolumn",
+    "class": "section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "OUR SERVICES",
+        "label": "Heading"
+      },
+      {
+        "type": "range",
+        "id": "font_size",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 30,
+        "unit": "px",
+        "label": "font size"
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "options": [
+          {
+            "value": "color-1",
+            "label": "color 1"
+          }, {
+            "value": "color-2",
+            "label": "color 2"
+          }, {
+            "value": "color-3",
+            "label": "color 3"
+          }
+        ],
+        "default": "color-1",
+        "label": "color"
+      },
+      {
+        "type": "select",
+        "id": "background_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "background 1"
+          }, {
+            "value": "background-2",
+            "label": "background 2"
+          }, {
+            "value": "background-3",
+            "label": "background 3"
+          }
+        ],
+        "default": "background-3",
+        "label": "background"
+      }, {
+        "type": "header",
+        "content": "padding header top"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "padding top",
+        "default": 100
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "padding bottom",
+        "default": 100
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "column",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "default": "FREE SHIPPING IN ITALY",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "sub_title",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "label": "Sub title"
+          },
+          {
+            "type": "text",
+            "id": "link_label",
+            "default": "READ MORE >",
+            "label": "Link label"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }, {
+            "type": "select",
+            "id": "color_item",
+            "options": [
+              {
+                "value": "color-1",
+                "label": "color 1"
+              }, {
+                "value": "color-2",
+                "label": "color 2"
+              }, {
+                "value": "color-3",
+                "label": "color 3"
+              }
+            ],
+            "default": "color-1",
+            "label": "color"
+          }, {
+            "type": "select",
+            "id": "background_item",
+            "options": [
+              {
+                "value": "background-1",
+                "label": "background 1"
+              }, {
+                "value": "background-2",
+                "label": "background 2"
+              }, {
+                "value": "background-3",
+                "label": "background 3"
+              }
+            ],
+            "default": "background-2",
+            "label": "background"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "multicolumn",
+        "blocks": [
+          {
+            "type": "column"
+          }, {
+            "type": "column"
+          }, {
+            "type": "column"
+          }, {
+            "type": "column"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
