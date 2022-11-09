@@ -1,5 +1,76 @@
 {
   "current": {
+    "colors_background_1": "#171719",
+    "page_width": 1180,
+    "social_facebook_link": "â",
+    "social_instagram_link": "a",
+    "social_youtube_link": "a",
+    "social_linkedin_link": "a",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo_width": 134,
+          "menu": "main-menu",
+          "padding_top": 20,
+          "padding_bottom": 20
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "header_top_title": "FREE SHIPPING IN ITALY",
+          "color_scheme": "color-2",
+          "background_scheme": "background-1",
+          "font_size": 14,
+          "padding_top": 15,
+          "padding_bottom": 15
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "CUSTOMER CARE",
+              "menu": "footer"
+            }
+          },
+          "5144ccab-43e2-475a-a7d1-d49d82ada9b1": {
+            "type": "link_list",
+            "settings": {
+              "heading": "LEGAL INFORMATION:",
+              "menu": "footer-menu-2"
+            }
+          },
+          "7aaf4749-e45e-4bc3-a9cb-e214b9c1137c": {
+            "type": "link_list",
+            "settings": {
+              "heading": "LEGAL TERMS:",
+              "menu": "footer-menu-3"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "5144ccab-43e2-475a-a7d1-d49d82ada9b1",
+          "7aaf4749-e45e-4bc3-a9cb-e214b9c1137c"
+        ],
+        "settings": {
+          "image_logo_footer": "shopify:\/\/shop_images\/logo-footer.png",
+          "footer_heading": "SUBSCRIBE FOR NEWSLETTER",
+          "footer_social": "SOCIAL",
+          "footer_bottom": "De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy",
+          "color_scheme": "color-1",
+          "background_scheme": "background-1"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": [
 
