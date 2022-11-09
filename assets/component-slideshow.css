@@ -1,0 +1,93 @@
+.box-section {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.mySlides {
+  width: 100%;
+  display: none;
+}
+
+.mySlides .banner {
+  width: 100%;
+  height: auto;
+}
+
+.slideshow-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  font-size: 22px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 57px;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 57px;
+  border-radius: 3px 0 0 3px;
+}
+
+.text {
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 118px;
+  left: 130px;
+}
+
+.button {
+  background: #FFFFFF;
+  position: absolute;
+  bottom: 50px;
+  left: 130px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: #171719;
+  padding: 12px 32px 12px 32px;
+  border: 0;
+  cursor: pointer;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
