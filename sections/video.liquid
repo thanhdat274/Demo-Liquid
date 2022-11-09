@@ -1,0 +1,209 @@
+{{ 'video.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="box-section section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="box2">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'video' -%}
+            <div class="box2-left">
+              <noscript>
+                <div class="video-section__media">
+                  <a href="{{ block.settings.video_url }}" class="video-section__poster media media--transparent media--landscape{% if block.settings.cover_image == blank %} video-section__placeholder{% endif %}">
+                    {%- if block.settings.cover_image != blank -%}
+                      {{ block.settings.cover_image | image_url: width: 3840 | image_tag:
+                       loading: 'lazy'
+                       , sizes: sizes
+                       , alt: alt
+                       }}
+                    {%- else -%}
+                      {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                    {%- endif -%}
+                  </a>
+                </div>
+              </noscript>
+              <deferred-media data-media-id="{{ block.settings.video_url.id }}" {% if block.settings.cover_image != blank %}style="padding-bottom: {{ 1 | divided_by: block.settings.cover_image.aspect_ratio | times: 100 }}%;"{% endif %}>
+                <div id="Deferred-Poster-Modal-{{ block.settings.video_url.id }}" class="video-section__poster media deferred-media__poster media--landscape" type="button" aria-label="{{ 'sections.video.load_video' | t: description: block.settings.description | escape }}">
+                  {%- if block.settings.cover_image != blank -%}
+                    {{ block.settings.cover_image | image_url: width: 3840 | image_tag:
+                     class:"image_video"
+                     , loading: 'lazy'
+                     , sizes: sizes
+                     , alt: alt
+                     , widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                     }}
+                  {%- else -%}
+                    {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                  {%- endif -%}
+                  <span class="deferred-media__poster-button motion-reduce play-video">
+                    {%- render 'icon-play' -%}
+                  </span>
+                </div>
+                <template>
+                  {%- if block.settings.video_url.type == 'youtube' -%}
+                    <iframe src="https://www.youtube.com/embed/{{ block.settings.video_url.id }}?enablejsapi=1" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  {%- else -%}
+                    <iframe src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}" class="js-vimeo" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  {%- endif -%}
+                </template>
+              </deferred-media>
+            </div>
+
+          {%- when 'box_right' -%}
+            <div class="box2-right">
+              <h2 class="heading">{{ block.settings.title }}</h2>
+              <p class="block-sub-title title1">{{ block.settings.sub_title }}</p>
+              <div class="rich-text__buttons{% if block.settings.button_label != blank %} {% endif %}">
+                {%- if block.settings.button_label != blank -%}
+                  <a {% if block.settings.button_link == blank %}role="link"aria-disabled="true"{% else %} href="{{ block.settings.button_link }}" {% endif %} class="button1">{{ block.settings.button_label | escape }}</a>
+                {%- endif -%}
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "video",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "padding section"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "padding top",
+        "default": 100
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "padding bottom",
+        "default": 100
+      }
+    ],
+    "blocks": [
+      {
+        "type": "video",
+        "name": "video",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "cover_image",
+            "label": "cover_image"
+          }, {
+            "type": "video_url",
+            "id": "video_url",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "label": "Video"
+          }
+        ]
+      }, {
+        "type": "box_right",
+        "name": "box_right",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "default": "WE FOCUS ON WHAT’S REALLY IMPORTANT",
+            "label": "Title"
+          },
+          {
+            "type": "select",
+            "id": "color_title",
+            "options": [
+              {
+                "value": "color-1",
+                "label": "color 1"
+              }, {
+                "value": "color-2",
+                "label": "color 2"
+              }, {
+                "value": "color-3",
+                "label": "color 3"
+              }
+            ],
+            "default": "color-1",
+            "label": "color title"
+          },
+          {
+            "type": "text",
+            "id": "sub_title",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
+            "label": "Sub title"
+          },
+          {
+            "type": "select",
+            "id": "color_sub_title",
+            "options": [
+              {
+                "value": "color-1",
+                "label": "color 1"
+              }, {
+                "value": "color-2",
+                "label": "color 2"
+              }, {
+                "value": "color-3",
+                "label": "color 3"
+              }
+            ],
+            "default": "color-3",
+            "label": "color sub title"
+          }, {
+            "type": "text",
+            "id": "button_label",
+            "default": "DISCOVER THE STORY",
+            "label": "Button"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video",
+        "blocks": [
+          {
+            "type": "video"
+          }, {
+            "type": "box_right"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
