@@ -1,0 +1,150 @@
+{{ 'shopbycategory.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .heading {
+    font-size: {{ section.settings.font_size_title }}px
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+{%- endstyle -%}
+
+<section class="box-section color-{{ section.settings.color_scheme }} color-{{ section.settings.background_scheme }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="box1">
+      <div class="box-heading">
+        <h2 class="heading">{{ section.settings.heading }}
+        </h2>
+      </div>
+      <div class="section1-content">
+        {%- for block in section.blocks -%}
+          <div class="section1-item">
+            <div id="Slide-{{ section.id }}-{{ forloop.index }}" class="section1-item collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
+              {% render 'card-collection', card_collection: block.settings.collection %}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Shop by category",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "SHOP BY CATEGORY",
+        "label": "heading"
+      },
+      {
+        "type": "range",
+        "id": "font_size_title",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 30,
+        "label": "font size"
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "options": [
+          {
+            "value": "color-1",
+            "label": "color 1"
+          }, {
+            "value": "color-2",
+            "label": "color 2"
+          }, {
+            "value": "color-3",
+            "label": "color 3"
+          }
+        ],
+        "default": "color-1",
+        "label": "color"
+      },
+      {
+        "type": "select",
+        "id": "background_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "background 1"
+          }, {
+            "value": "background-2",
+            "label": "background 2"
+          }, {
+            "value": "background-3",
+            "label": "background 3"
+          }
+        ],
+        "default": "background-2",
+        "label": "background"
+      }, {
+        "type": "header",
+        "content": "padding section"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "padding top",
+        "default": 100
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "padding bottom",
+        "default": 100
+      }
+    ],
+    "blocks": [
+      {
+        "type": "featured_collection",
+        "name": "featured collection",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Category",
+        "blocks": [
+          {
+            "type": "featured_collection"
+          }, {
+            "type": "featured_collection"
+          }, {
+            "type": "featured_collection"
+          }, {
+            "type": "featured_collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
