@@ -1,0 +1,51 @@
+.box2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.box2-left {
+  width: 200%;
+  max-width: 593px;
+  height: auto;
+  position: relative;
+}
+
+.play-video {
+  position: absolute;
+  width: 78px;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  cursor: pointer;
+}
+
+.box2-right {
+  width: 100%;
+  max-width: 590px;
+  height: auto;
+  background: #F5F5F5;
+  padding: 133px 90px;
+}
+
+.title1 {
+  margin-top: 20px;
+  color: #84848E;
+  letter-spacing: 0px;
+}
+
+.button1 {
+  padding: 12px 32px;
+  margin-top: 70px;
+  background: #FFFFFF;
+  border: 0;
+  display: inline-block;
+}
+
+.image_video{
+  width: 100%;
+  max-width: 593px;
+  height: 100%;
+}
