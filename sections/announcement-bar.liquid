@@ -1,0 +1,124 @@
+{%- style -%}
+  .box__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .block-sub-title {
+    letter-spacing: 2px;
+    font-size: {{ section.settings.font_size}}px
+  }
+
+  .box-select {
+    border: 0;
+    background: #171719;
+    color: #FFFFFF;
+    outline: none;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+{%- endstyle -%}
+
+<div class="box__top  color-{{ section.settings.background_scheme }} section-{{ section.id }}-padding">
+  <div class="box-none"></div>
+  <p class="block-sub-title color-{{ section.settings.color_scheme }}">{{section.settings.header_top_title}}</p>
+
+  <select class="box-select block-sub-title">
+    <option value="0" selected>Italian</option>
+    <option value="1">English</option>
+    <option value="2">Vietnamese</option>
+  </select>
+</div>
+
+
+{% schema %}
+  {
+    "name": "header top",
+    "class": "heaer_top",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header_top_title",
+        "default": "header top title",
+        "label": "header top title"
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "options": [
+          {
+            "value": "color-1",
+            "label": "color 1"
+          }, {
+            "value": "color-2",
+            "label": "color 2"
+          }, {
+            "value": "color-3",
+            "label": "color 3"
+          }
+        ],
+        "default": "color-2",
+        "label": "color"
+      },
+      {
+        "type": "select",
+        "id": "background_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "background 1"
+          }, {
+            "value": "background-2",
+            "label": "background 2"
+          }, {
+            "value": "background-3",
+            "label": "background 3"
+          }
+        ],
+        "default": "background-1",
+        "label": "background"
+      },
+      {
+        "type": "range",
+        "id": "font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 16
+      }, {
+        "type": "header",
+        "content": "padding header top"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "padding top",
+        "default": 15
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "padding bottom",
+        "default": 15
+      }
+    ]
+  }
+{%endschema%}
