@@ -1,0 +1,185 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer color-{{ section.settings.background_scheme }} color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    <div class="footer-wrapper">
+      <div class="box-logo-footer">
+        {%- if section.settings.image_logo_footer != blank -%}
+          {{ section.settings.image_logo_footer | image_url: width: 1420 | image_tag:
+           loading: 'lazy'
+           , sizes: sizes
+           , widths: '275, 550, 710, 1420'
+           , class: "img-footer"
+           }}
+        {%- endif -%}
+      </div>
+
+      <div class="footer-content">
+        {%- for block in section.blocks -%}
+          <div class="footer-item1">
+            {%- if block.settings.heading != blank -%}
+              <h2 class="block-sub-title text-white">{{- block.settings.heading | escape -}}</h2>
+            {%- endif -%}
+            {%- case block.type -%}
+              {%- when 'link_list' -%}
+                {%- if block.settings.menu != blank -%}
+                  <ul class="menu-footer">
+                    {%- for link in block.settings.menu.links -%}
+                      <li class="item-menu-footer1">
+                        <a href="{{ link.url }}" class="block-sub-title title-footer">
+                          {{ link.title }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+
+        <div class="footer-item1">
+          <div class="footer-item1">
+            {%- if section.settings.footer_heading != blank -%}
+              <h3 class="block-sub-title text-white">{{ section.settings.footer_heading | escape }}</h3>
+            {%- endif -%}
+
+            {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+              <div class="box-subscribe">
+                <input id="NewsletterForm--{{ section.id }}" type="email" name="contact[email]" class="input-sub" value="{{ form.email }}" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" {% if form.errors %}autofocus
+                  aria-invalid="true"aria-describedby="ContactFooter-error"{% elsif form.posted_successfully? %}aria-describedby="ContactFooter-success"{% endif %}placeholder="Your Email" required>
+
+                <button class="btn-subscribe">Subscribe</button>
+              </div>
+            {%- endform -%}
+          </div>
+
+          <div class="footer-item1 box-social">
+            {%- if section.settings.footer_social != blank -%}
+              <h3 class="block-sub-title text-white">{{ section.settings.footer_social | escape }}</h3>
+            {%- endif -%}
+            <div class="box-icon-footer">
+              {%- if settings.social_facebook_link != blank -%}
+                <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
+                  {%- render 'icon-facebook' -%}
+                </a>
+              {%- endif -%}
+              {%- if settings.social_instagram_link != blank -%}
+                <a href="{{ settings.social_instagram_link }}" class="link list-social__link">
+                  {%- render 'icon-instagram' -%}
+                </a>
+              {%- endif -%}
+              {%- if settings.social_linkedin_link != blank -%}
+                <a href="{{ settings.social_linkedin_link }}" class="link list-social__link">
+                  {%- render 'icon-linkedin' -%}
+                </a>
+              {%- endif -%}
+              {%- if settings.social_youtube_link != blank -%}
+                <a href="{{ settings.social_youtube_link }}" class="link list-social__link">
+                  {%- render 'icon-youtube' -%}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        {%- if section.settings.footer_bottom != blank -%}
+          <p class="block-sub-title title-footer1">{{ section.settings.footer_bottom }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "footer",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_logo_footer",
+        "label": "Logo footer"
+      },
+      {
+        "type": "text",
+        "id": "footer_heading",
+        "default": "SUBSCRIBE FOR NEWSLETTER",
+        "label": "footer item email heading"
+      },
+      {
+        "type": "text",
+        "id": "footer_social",
+        "default": "SOCIAL",
+        "label": "footer item social heading"
+      },
+      {
+        "type": "text",
+        "id": "footer_bottom",
+        "default": "footer",
+        "label": "footer bottom"
+      }, {
+        "type": "select",
+        "id": "color_scheme",
+        "options": [
+          {
+            "value": "color-1",
+            "label": "color 1"
+          }, {
+            "value": "color-2",
+            "label": "color 2"
+          }, {
+            "value": "color-3",
+            "label": "color 3"
+          }
+        ],
+        "default": "color-2",
+        "label": "color"
+      }, {
+        "type": "select",
+        "id": "background_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "background 1"
+          }, {
+            "value": "background-2",
+            "label": "background 2"
+          }, {
+            "value": "background-3",
+            "label": "background 3"
+          }
+        ],
+        "default": "background-1",
+        "label": "background"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "link_list",
+        "name": "link_list",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "footer title",
+            "label": "Footer title"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "default": "footer",
+            "label": "Menu footer"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "link_list"
+        }
+      ]
+    }
+  }
+{% endschema %}
