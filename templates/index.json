@@ -1,178 +1,213 @@
 {
   "sections": {
-    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac": {
-      "type": "rich-text",
+    "7876d5c4-69e7-490d-a6cb-eec42be535e8": {
+      "type": "slideshow",
       "blocks": {
-        "bd07930e-2aae-457a-80d3-1b907b1d4820": {
-          "type": "heading",
+        "template--14456151572609__7876d5c4-69e7-490d-a6cb-eec42be535e8-1667869508b32e942e-0": {
+          "type": "slide",
           "settings": {
-            "heading": "<p>Hoc liquid lu qua<\/p>",
-            "heading_size": 57
+            "image": "shopify:\/\/shop_images\/banner.png",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/ring"
           }
         },
-        "d3028d4e-f853-48aa-adc4-0490754a8a56": {
-          "type": "button",
+        "1ac3bd1b-5349-4370-a693-8a2942b4d1d8": {
+          "type": "slide",
           "settings": {
-            "button_label": "Button",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify:\/\/shop_images\/banner.png",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "button_label": "SHOP NOW",
+            "link": ""
           }
         },
-        "72133735-31b3-44c2-a07b-9ab536a57a3a": {
-          "type": "text",
+        "6ed996ac-3af0-44db-b55a-c827b802fed9": {
+          "type": "slide",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "image": "shopify:\/\/shop_images\/banner.png",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "button_label": "SHOP NOW",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "bd07930e-2aae-457a-80d3-1b907b1d4820",
-        "d3028d4e-f853-48aa-adc4-0490754a8a56",
-        "72133735-31b3-44c2-a07b-9ab536a57a3a"
+        "template--14456151572609__7876d5c4-69e7-490d-a6cb-eec42be535e8-1667869508b32e942e-0",
+        "1ac3bd1b-5349-4370-a693-8a2942b4d1d8",
+        "6ed996ac-3af0-44db-b55a-c827b802fed9"
       ],
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
-    "d0662d1d-f537-4de7-b85f-1213482eae46": {
-      "type": "rich-text",
+    "7a676e2a-fe94-41b0-b4ce-e055d9a2b503": {
+      "type": "collection-list",
       "blocks": {
-        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-0": {
-          "type": "heading",
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-0": {
+          "type": "featured_collection",
           "settings": {
-            "heading": "<p>Hoc liquid lu qua <\/p>",
-            "heading_size": 24
+            "collection": "ring"
           }
         },
-        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-1": {
-          "type": "text",
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-1": {
+          "type": "featured_collection",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "collection": "bracelets"
           }
         },
-        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-2": {
-          "type": "button",
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-2": {
+          "type": "featured_collection",
           "settings": {
-            "button_label": "button 1",
-            "button_link": "shopify:\/\/collections",
-            "button_style_secondary": false,
-            "button_label_2": "button 2",
-            "button_link_2": "shopify:\/\/collections\/all",
-            "button_style_secondary_2": false
+            "collection": "earings"
           }
         },
-        "e1b75fd1-42f3-49eb-a2ae-427c22b0bde5": {
-          "type": "heading",
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-3": {
+          "type": "featured_collection",
           "settings": {
-            "heading": "<p>Hoc liquid lu qua <\/p>",
-            "heading_size": 24
+            "collection": "necklace"
           }
         }
       },
       "block_order": [
-        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-0",
-        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-1",
-        "template--14420425998465__d0662d1d-f537-4de7-b85f-1213482eae46-1666067598a41163db-2",
-        "e1b75fd1-42f3-49eb-a2ae-427c22b0bde5"
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-0",
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-1",
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-2",
+        "template--14451313770625__7a676e2a-fe94-41b0-b4ce-e055d9a2b503-166727728491db7e41-3"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "heading": "SHOP BY CATEGORY",
+        "font_size_title": 30,
+        "color_scheme": "color-1",
+        "background_scheme": "background-2",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
-    "8cbc0ec1-9ac4-4f09-8721-65ccb6be0798": {
-      "type": "rich-text",
+    "87c3a4a4-20b7-4da9-ad11-5a4602b0433e": {
+      "type": "video",
       "blocks": {
-        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-0": {
-          "type": "heading",
+        "template--14451313770625__87c3a4a4-20b7-4da9-ad11-5a4602b0433e-1667287017e961e232-0": {
+          "type": "video",
           "settings": {
-            "heading": "<p>Hoc liquid lu qua <\/p>",
-            "heading_size": 24
+            "cover_image": "shopify:\/\/shop_images\/Rectangle_151.png",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
           }
         },
-        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-1": {
-          "type": "text",
+        "template--14451313770625__87c3a4a4-20b7-4da9-ad11-5a4602b0433e-1667287017e961e232-1": {
+          "type": "box_right",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        },
-        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "title": "WE FOCUS ON WHAT’S REALLY IMPORTANT",
+            "color_title": "color-1",
+            "sub_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
+            "color_sub_title": "color-3",
+            "button_label": "DISCOVER THE STORY",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-0",
-        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-1",
-        "template--14445859799169__8cbc0ec1-9ac4-4f09-8721-65ccb6be0798-1666078580423adeea-2"
+        "template--14451313770625__87c3a4a4-20b7-4da9-ad11-5a4602b0433e-1667287017e961e232-0",
+        "template--14451313770625__87c3a4a4-20b7-4da9-ad11-5a4602b0433e-1667287017e961e232-1"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
-    "4086dd87-0c80-4352-b773-0aa9076b2a8f": {
-      "type": "rich-text",
+    "3b120452-2e40-4117-bcbc-960ff1321781": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "FEATURED PRODUCT",
+        "font_size": 30,
+        "collection": "frontpage",
+        "color_scheme": "color-1",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "fae5e6f4-a6ed-4fca-a0ed-618202681006": {
+      "type": "image-banner",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/Rectangle-154.png",
+        "heading_banner": "NEW COLLECTION 2021",
+        "sub_title_banner": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu",
+        "button_label": "SEE MORE  >",
+        "button_link": "shopify:\/\/collections"
+      }
+    },
+    "37e38baf-f9db-4951-a297-d2600dcdc176": {
+      "type": "multicolumn",
       "blocks": {
-        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-0": {
-          "type": "heading",
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-0": {
+          "type": "column",
           "settings": {
-            "heading": "<p>Hoc liquid lu qua <\/p>",
-            "heading_size": 24
+            "image": "shopify:\/\/shop_images\/parcel_1.png",
+            "title": "FREE SHIPPING IN ITALY",
+            "sub_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link_label": "READ MORE >",
+            "link": "",
+            "color_item": "color-1",
+            "background_item": "background-2"
           }
         },
-        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-1": {
-          "type": "text",
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-1": {
+          "type": "column",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "image": "shopify:\/\/shop_images\/parcel_1.png",
+            "title": "FREE SHIPPING IN ITALY",
+            "sub_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link_label": "READ MORE >",
+            "link": "",
+            "color_item": "color-1",
+            "background_item": "background-2"
           }
         },
-        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-2": {
-          "type": "button",
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-2": {
+          "type": "column",
           "settings": {
-            "button_label": "Button",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify:\/\/shop_images\/parcel_1.png",
+            "title": "FREE SHIPPING IN ITALY",
+            "sub_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link_label": "READ MORE >",
+            "link": "",
+            "color_item": "color-1",
+            "background_item": "background-2"
+          }
+        },
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/parcel_1.png",
+            "title": "FREE SHIPPING IN ITALY",
+            "sub_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link_label": "READ MORE >",
+            "link": "",
+            "color_item": "color-1",
+            "background_item": "background-2"
           }
         }
       },
       "block_order": [
-        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-0",
-        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-1",
-        "template--14445859799169__4086dd87-0c80-4352-b773-0aa9076b2a8f-1666078580423adeea-2"
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-0",
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-1",
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-2",
+        "template--14451313770625__37e38baf-f9db-4951-a297-d2600dcdc176-16675258493b095344-3"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "heading": "OUR SERVICES",
+        "font_size": 30,
+        "color_scheme": "color-1",
+        "background_scheme": "background-3",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
-    "4a0aa1bb-9cad-4a60-bd6f-e105ca1493ac",
-    "d0662d1d-f537-4de7-b85f-1213482eae46",
-    "8cbc0ec1-9ac4-4f09-8721-65ccb6be0798",
-    "4086dd87-0c80-4352-b773-0aa9076b2a8f"
+    "7876d5c4-69e7-490d-a6cb-eec42be535e8",
+    "7a676e2a-fe94-41b0-b4ce-e055d9a2b503",
+    "87c3a4a4-20b7-4da9-ad11-5a4602b0433e",
+    "3b120452-2e40-4117-bcbc-960ff1321781",
+    "fae5e6f4-a6ed-4fca-a0ed-618202681006",
+    "37e38baf-f9db-4951-a297-d2600dcdc176"
   ]
 }
