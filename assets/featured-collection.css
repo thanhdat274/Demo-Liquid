@@ -1,0 +1,83 @@
+.box3 {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section3-content {
+  width: 100%;
+  /* height: auto; */
+  margin-top: 45px;
+  gap: 0 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.section3-item {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px 0;
+}
+
+.box-img {
+  position: relative;
+}
+
+.section3-item__img {
+  width: 100%;
+  height: auto;
+}
+
+.box-img::before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 17.5px;
+  background-image: url(../image/love.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: 20px;
+  right: 20px;
+}
+
+.section3-item__title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.section3-item__title a {
+  text-decoration: none;
+}
+
+.title2 {
+  color: #555562;
+  letter-spacing: 0px;
+}
+
+.section3-item__button {
+  background: #FFFFFF;
+  border: 1px solid #171719;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: #171719;
+  padding: 12px 32px 12px 32px;
+  cursor: pointer;
+}
+
+.section3-item__button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
