@@ -1,0 +1,57 @@
+.box-section {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.box1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  line-height: 45px;
+  letter-spacing: 2px;
+}
+
+.block-sub-title {
+  line-height: 24px;
+  letter-spacing: 2px;
+}
+
+.section1-content {
+  width: 100%;
+  margin-top: 45px;
+  gap: 0 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.section1-item {
+  width: 100%;
+  max-width: 280px;
+  height: 360px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  position: absolute;
+  bottom: 30px;
+  margin: 0 auto;
+  text-align: center;
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 125px;
+  padding: 13px 0;
+}
+
+.title a {
+  text-decoration: none;
+}
