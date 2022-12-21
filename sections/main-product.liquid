@@ -1,6 +1,19 @@
 {{ 'detail-products.css' | asset_url | stylesheet_tag }}
 
-<section class="box-section1">
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+{%- endstyle -%}
+
+<section class="box-section1 section-{{ section.id }}-padding">
   <div class="page-width">
     <div class="box-product-detail">
 
@@ -65,51 +78,123 @@
           </div>
         </div>
 
-        <div class="product-detail__right">
-          <h2 class="product-detail__name heading">PRODUCT NAME</h2>
-          <p class="product-detail__price heading">$99.99</p>
-          <div class="detail-info__size">
-            <span class="block-title let-sp-2px">SIZE</span>
-            <div class="detail-info__size-icon">
-              <img src="./image/detail-icon.svg" alt="">
-              <span class="block-sub-title text-48E">Find your size</span>
-            </div>
-          </div>
+        <div class="product-detail__right" id="ProductInfo-{{ section.id }}">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'title' -%}
+                <h2 class="product-detail__name heading">
+                  {{ product.title | escape }}
+                </h2>
+              {%- when 'price' -%}
+                <p class="product-detail__price heading">
+                  {{ product.price | escape }}
+                </p>
 
-          <form action="">
-            <div class="detail-info__select-size">
-              <select name="" id="" class="form-select block-title1">
-                <option value="50">50</option>
-                <option value="50">50</option>
-                <option value="50">50</option>
-              </select>
-            </div>
-            <div class="detail-info__addToCart">
-              <div class="detail-info__addToCart-amount">
-                <i class="fa-solid fa-minus"></i>
-                <span class="block-title1">1</span>
-                <i class="fa-solid fa-plus"></i>
-              </div>
-              <button class="addToCart__btn block-sub-title let-sp-2px">ADD TO CART</button>
-              <div class="addToCart__icon-like">
-                <i class="fa-regular fa-heart icon-like active"></i>
-                <i class="fa-sharp fa-solid fa-heart icon-like-fill"></i>
-              </div>
-            </div>
-            <button class="btn-buy-now block-sub-title let-sp-2px">BUY NOW</button>
-          </form>
 
-          <div class="detail-info__promotion block-sub-title let-sp-2px">
-            GET THIS PRODUCT BY 1ST APR !
-          </div>
+                <form action="">
 
-          <p class="detail-info__desc block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus error
-            sit voluptatem accusantium
-                        doloremque laudanm, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                        beatae vitae dicta sunt explicabo</p>
+                  <variant-selects data-section="{{ section.id }}" data-url="{{ product.url }}">
+                    {%- for option in product.options_with_values -%}
+                      <div class="product-form__input product-form__input--dropdown">
+                        <div class="detail-info__size">
+                          <span class="block-title let-sp-2px">
+                            {{ option.name }}</span>
+                          <div class="detail-info__size-icon">
+                            <img src="./image/detail-icon.svg" alt="">
+                            <span class="block-sub-title text-48E">Find your size</span>
+                          </div>
+                        </div>
+                        <div class="detail-info__select-size">
+                          <select id="Option-{{ section.id }}-{{ forloop.index0 }}" class="form-select block-title1" name="options[{{ option.name | escape }}]" form="{{ product_form_id }}">
+                            {%- for value in option.values -%}
+                              <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>{{ value }}
+                              </option>
+                            {%- endfor -%}
+                          </select>
+                          <div class="icon-price">
+                            {% render 'icon-caret' %}
+                          </div>
+                        </div>
+                      </div>
+                    {%- endfor -%}
 
-          <h3 class="detail-info__gift block-title let-sp-2px">OUR GIFT BOX EXCLUSIVELY FOR YOU</h3>
-          <img src="./image/product-detail.png" alt="" class="product-detail__image">
+                    <script type="application/json">
+                      {{ product.variants | json }}
+                    </script>
+                  </variant-selects>
+                  <div class="detail-info__addToCart">
+                    <div class="detail-info__addToCart-amount">
+                      <quantity-input class="quantity detail-info__addToCart-amount">
+                        <button class="quantity__button no-js-hidden" name="minus" type="button">
+                          {% render 'icon-minus' %}
+                        </button>
+                        <input
+                          class="block-title1 input_quantity"
+                          type="number"
+                          name="quantity"
+                          id="Quantity-{{ section.id }}"
+                          min="1"
+                          value="1"
+                          form="{{ product_form_id }}"
+                        >
+                        <button class="quantity__button no-js-hidden" name="plus" type="button">
+                          {% render 'icon-plus' %}
+                        </button>
+                      </quantity-input>
+                    </div>
+
+                      <button
+                        type="submit"
+                        name="add"
+                        class="addToCart__btn block-sub-title let-sp-2px"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            {{ 'ADD TO CART' }}
+                          {%- else -%}
+                            {{ 'sold_out' }}
+                          {%- endif -%}
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            role="presentation"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </button>
+              
+                    <div class="addToCart__icon-like">
+                      <i class="fa-regular fa-heart icon-like active"></i>
+                      <i class="fa-sharp fa-solid fa-heart icon-like-fill"></i>
+                    </div>
+                  </div>
+                  <button class="btn-buy-now block-sub-title let-sp-2px">BUY NOW</button>
+                </form>
+
+                <div class="detail-info__promotion block-sub-title let-sp-2px">
+                  GET THIS PRODUCT BY 1ST APR !
+                </div>
+
+                <p class="detail-info__desc block-sub-title text-48E">Sed ut perspiciatis unde omnis iste natus error
+                  sit voluptatem accusantium
+                                                                                                                                                                                                                                                                            doloremque laudanm, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                                                                                                                                                                                                                                                                            beatae vitae dicta sunt explicabo</p>
+
+                <h3 class="detail-info__gift block-title let-sp-2px">OUR GIFT BOX EXCLUSIVELY FOR YOU</h3>
+                <img src="./image/product-detail.png" alt="" class="product-detail__image">
+            {%- endcase -%}
+          {%- endfor -%}
         </div>
       </div>
 
@@ -201,17 +286,88 @@
   </div>
 </section>
 
+
 {% schema %}
   {
     "name": "product detail",
     "tag": "section",
     "class": "section",
-    "settings": [
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "title",
+        "name": "title",
+        "limit": 1
+      },
+      {
+        "type": "price",
+        "name": "price",
+        "limit": 1
+      },
+      {
+        "type": "quantity_selector",
+        "name": "quantity_selector",
+        "limit": 1
+      }, {
+        "type": "variant_picker",
+        "name": "variant_picker",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "picker_type",
+            "options": [
+              {
+                "value": "dropdown",
+                "label": "dropdown"
+              }, {
+                "value": "button",
+                "label": "button"
+              }
+            ],
+            "default": "dropdown",
+            "label": "dropdown"
+          }
+        ]
+      },
       {
         "type": "text",
-        "id": ""
+        "name": "text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "default": "text",
+            "label": "text"
+          }
+        ]
       }
     ],
-    "blocks": []
+    "settings": [
+      {
+        "type": "header",
+        "content": "padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "padding top",
+        "default": 100
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "padding bottom",
+        "default": 100
+      }
+    ]
   }
 {% endschema %}
